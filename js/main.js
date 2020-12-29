@@ -55,5 +55,4 @@ var sidebar = L.control.sidebar('sidebar', 'left').addTo(map);
 
 	
 //adding Layer control
-L.control.layers(baseMaps, 
-	{position:'topright', collapsed: true}).addTo(map); //layer control not working for the moment
+L.control.layers(baseMaps).addTo(map); 
