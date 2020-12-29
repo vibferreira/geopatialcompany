@@ -1,0 +1,27 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#map{
+    height:100%;
+    width:100%;
+    overflow:hidden;
+    position: absolute;
+    font-family: 'Hind Madurai', sans-serif;
+    font: 10pt; 
+}
+
+.sidebar-pane{
+    font-family: 'Roboto Slab', serif;
+}
+
+
+p{
+    color: rgb(49, 45, 45);
+    font-family:'Zilla Slab', serif;
+    font: 6pt;
+    text-align: justify;
+    padding-right: 5%;
+}
