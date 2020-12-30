@@ -46,13 +46,11 @@ north.addTo(map);
 //adding sidebar
 var sidebar = L.control.sidebar('sidebar', 'left').addTo(map);
 
-// adding GeoJSON point features to the map 
+//adding wfs to map
 
 
-
-
-
-
-	
+L.esri.featureLayer({
+	url: 'https://services7.arcgis.com/SONJ3c5lv0Fv1KtG/arcgis/rest/services/Worldgeo_Clean_CSV/FeatureServer/0'
+  }).addTo(map);
 //adding Layer control
 L.control.layers(baseMaps).addTo(map); 

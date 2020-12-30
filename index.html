@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geospatial Companies in Europe</title>
+
+
+    
     
     <!--link to stylesheet-->
     <link rel="stylesheet" href="css/style.css">
@@ -11,8 +14,6 @@
     <!-- link to leaflet stylesheet-->
     <link rel="stylesheet" href="css/leaflet.css">
     
-    <!-- link to leaflet javascript library-->
-    <script src="js/leaflet-src.js"></script>
 
     <!--link to the file that contains geoJson data-->
     <script src="data/salzburgStadt.js" type="text/javascript"></script>
@@ -28,6 +29,15 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
     <link rel="stylesheet" href="css/leaflet-sidebar.css" />
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- link to leaflet javascript library-->
+    <script src="js/leaflet-src.js"></script>
+    
+    <!-- esri leaflet plugin -->
+    <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
+    integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
+    crossorigin=""></script>
+    
 
 </head>
 <body>
@@ -75,6 +85,13 @@
                 </h1>
                 <p> Map by Pratichhya Sharma and Vitória Barbosa Ferreira, Msc students in the <a href="https://www.master-cde.eu/" title = "master-cde" target="_blank" > Copernicus Master in Digital Earth </a>. </p>
             </div>
+            <div class="sidebar-pane" id="profile">
+                <h1 class="sidebar-header">Register New Companies <span class="sidebar-close">
+                    <i class="fa fa-caret-left"></i></span>
+                </h1>
+                <a href="https://arcg.is/1u8jPb" class="btn btn-primary">Show your Company as Geospatial Company</a>
+                
+            </div>
 
         </div>
     </div>
@@ -84,11 +101,25 @@
 
     <!-- sidebar -->
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-    <script src="js/leaflet-sidebar.js"></script>
     
-    <!-- links the js files to the html index (displays the map)  --> 
-    <script src="js/main.js"></script>
+ 
+    <!-- Load Leaflet from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
 
+<!-- Load Esri Leaflet from CDN -->
+<script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
+  integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
+  crossorigin=""></script>
 
+  <script src="js/leaflet-sidebar.js"></script>
+  <script src="js/main.js"></script>
+
+    
+    
 </body>
 </html>
