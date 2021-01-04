@@ -54,3 +54,8 @@ L.esri.featureLayer({
   }).addTo(map);
 //adding Layer control
 L.control.layers(baseMaps).addTo(map); 
+
+//when double clicked on the map, an alert with the latitude and longitude coordinates for that location
+map.on('dblclick', function(e) {
+	alert(e.latlng);
+});
