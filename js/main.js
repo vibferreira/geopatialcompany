@@ -48,8 +48,8 @@ var sidebar = L.control.sidebar('sidebar', 'left').addTo(map);
 
 //styling icon
 var icon = L.icon({
-    iconUrl: 'https://pratichhya.github.io/images/myimages/logo2.PNG',
-    iconSize: [27, 31],
+    iconUrl: '/data/images/location.png',
+    iconSize: [17, 17],
     iconAnchor: [13.5, 17.5],
     popupAnchor: [0, -11]
   });
