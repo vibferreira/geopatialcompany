@@ -46,9 +46,9 @@ north.addTo(map);
 //adding sidebar
 var sidebar = L.control.sidebar('sidebar', 'left').addTo(map);
 
-//styling icon
-var icon = L.icon({
-    iconUrl: '/data/images/location.png',
+//styling simple icon
+var icon_simp = L.icon({
+    iconUrl: 'https://pratichhya01.github.io/geopatialcompany/data/images/location.png',
     iconSize: [17, 17],
     iconAnchor: [13.5, 17.5],
     popupAnchor: [0, -11]
@@ -57,7 +57,7 @@ var icon = L.icon({
 var geoLayer=L.esri.featureLayer({
 	url: 'https://services7.arcgis.com/SONJ3c5lv0Fv1KtG/arcgis/rest/services/Worldgeo_Clean_CSV/FeatureServer/0',
 	pointToLayer : function(feature, latlng){
-		return L.marker(latlng, {icon:icon})
+		return L.marker(latlng, {icon:icon_simp})
 	}
 
 });
