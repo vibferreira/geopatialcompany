@@ -55,7 +55,7 @@ var icon_simp = L.icon({
   });
 //styling enlarged icon
 var icon_enlarge = L.icon({
-    iconUrl: 'https://pratichhya01.github.io/geopatialcompany/data/images/location.png',
+    iconUrl: 'https://pratichhya01.github.io/geopatialcompany/data/images/location_eng.png',
     iconSize: [27, 27],
     iconAnchor: [13.5, 17.5],
     popupAnchor: [0, -11]
@@ -67,7 +67,6 @@ function highlightFeature(e) {
     layer.setIcon(icon_enlarge)
 }
 //reset function when mouse pointer is moved away from feature
-var geojson;
 function resetHighlight(e) {
     var layer = e.target;
 
