@@ -85,10 +85,14 @@ var geoLayer=L.esri.featureLayer({
         layer.on({
             mouseover: highlightFeature,
             mouseout: resetHighlight
-        })}
-    });
-
+		}),
+		//binding popup
+		layer.bindPopup(function(layer){
+			return L.Util.template('<p><strong>{USER_Name}</strong> is a {USER_Offic} size Geospatial Company identified as <strong>{USER_Categ}</strong> company in {City} of {USER_Count}. <br><a>{USER_Websi}</p>', feature.properties)}
+			)}
+	});
 geoLayer.addTo(map);
+
 
 //adding Layer control
 L.control.layers(baseMaps).addTo(map); 
