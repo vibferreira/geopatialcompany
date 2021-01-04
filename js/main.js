@@ -55,7 +55,7 @@ var icon_simp = L.icon({
   });
 //styling enlarged icon
 var icon_enlarge = L.icon({
-    iconUrl: 'https://pratichhya01.github.io/geopatialcompany/data/images/location_eng.png',
+    iconUrl: 'https://pratichhya01.github.io/geopatialcompany/data/images/location.png',
     iconSize: [27, 27],
     iconAnchor: [13.5, 17.5],
     popupAnchor: [0, -11]
@@ -73,7 +73,7 @@ function resetHighlight(e) {
     layer.setIcon(icon_simp)
 } 
 //adding wfs to map
-var geoLayer=L.esri.featureLayer({
+var geoLayer=L.esri.Cluster.featureLayer({
 	url: 'https://services7.arcgis.com/SONJ3c5lv0Fv1KtG/arcgis/rest/services/Worldgeo_Clean_CSV/FeatureServer/0',
 	pointToLayer : function(feature, latlng){
 		return L.marker(latlng, {icon:icon_simp})
