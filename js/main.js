@@ -53,14 +53,40 @@ var icon_simp = L.icon({
     iconAnchor: [13.5, 17.5],
     popupAnchor: [0, -11]
   });
+//styling enlarged icon
+var icon_enlarge = L.icon({
+    iconUrl: 'https://pratichhya01.github.io/geopatialcompany/data/images/location.png',
+    iconSize: [27, 27],
+    iconAnchor: [13.5, 17.5],
+    popupAnchor: [0, -11]
+  });
+//function for when mouse pointer is above feature
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setIcon(icon_enlarge)
+}
+//reset function when mouse pointer is moved away from feature
+var geojson;
+function resetHighlight(e) {
+    var layer = e.target;
+
+    layer.setIcon(icon_simp)
+} 
 //adding wfs to map
 var geoLayer=L.esri.featureLayer({
 	url: 'https://services7.arcgis.com/SONJ3c5lv0Fv1KtG/arcgis/rest/services/Worldgeo_Clean_CSV/FeatureServer/0',
 	pointToLayer : function(feature, latlng){
 		return L.marker(latlng, {icon:icon_simp})
-	}
-
-});
+	},
+	//adding popups
+    onEachFeature:function (feature, layer){ 
+        //call function to highlight icon when hover over it
+        layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlight
+        })}
+    });
 
 geoLayer.addTo(map);
 
