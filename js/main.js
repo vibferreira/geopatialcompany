@@ -32,10 +32,10 @@ var baseMaps = {
 }
 
 // adding scale bar
-L.control.scale({position:'bottomleft', imperial:false}).addTo(map);
+L.control.scale({position:'bottomright', imperial:false}).addTo(map);
 
 // adding north arrow
-var north = L.control({position: "bottomleft"});
+var north = L.control({position: "topright"});
 north.onAdd = function() {
     var div = L.DomUtil.create("div", "info legend");
     div.innerHTML = '<img src= "data/north-arrow.png" alt="Image" height = "30" width="30">';
