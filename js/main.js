@@ -49,14 +49,14 @@ var sidebar = L.control.sidebar('sidebar', 'left').addTo(map);
 //styling simple icon
 var icon_simp = L.icon({
     iconUrl: 'https://pratichhya01.github.io/geopatialcompany/data/images/location.png',
-    iconSize: [17, 17],
+    iconSize: [20, 20],
     iconAnchor: [13.5, 17.5],
     popupAnchor: [0, -11]
   });
 //styling enlarged icon
 var icon_enlarge = L.icon({
     iconUrl: 'https://pratichhya01.github.io/geopatialcompany/data/images/location.png',
-    iconSize: [27, 27],
+    iconSize: [30, 30],
     iconAnchor: [13.5, 17.5],
     popupAnchor: [0, -11]
   });
@@ -87,10 +87,12 @@ var geoLayer=L.esri.Cluster.featureLayer({
 		}),
 		//binding popup
 		layer.bindPopup(function(layer){
-			return L.Util.template('<p><strong>{USER_Name}</strong> is a {USER_Offic} size Geospatial Company identified as <strong>{USER_Categ}</strong> company in {City} of {USER_Count}. <br><a>{USER_Websi}</p>', feature.properties)}
+			return L.Util.template('<p><strong>{USER_Name}</strong> is a {USER_Offic} size Geospatial Company identified as <strong>{USER_Categ}</strong> company in {City}, {USER_Count}. <br><a>{USER_Websi}</p>', feature.properties)}
 			)}
 	});
+
 geoLayer.addTo(map);
+
 // create the geocoding control and add it to the map
 var searchControl = L.esri.Geocoding.geosearch().addTo(map);
 

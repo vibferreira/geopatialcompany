@@ -13,10 +13,6 @@
 
     <!-- link to leaflet stylesheet-->
     <link rel="stylesheet" href="css/leaflet.css">
-    
-
-    <!--link to the file that contains geoJson data-->
-    <script src="data/salzburgStadt.js" type="text/javascript"></script>
 
     <!-- link to google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
@@ -49,6 +45,8 @@
         <div class="sidebar-tabs">
             <ul role="tablist">
                 <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href = "#info" role = "tab"> <i class="fa fa-info"></i></a></li>
+                <li><a href = "#filter" role = "tab"> <i class="fa fa-filter"></i></a></li>
                 <li><a href="#profile" role="tab"><i class="fa fa-user"></i></a></li>
                 <!-- <li><a href="https://vibferreira.github.io/carto-leaflet/" role="tab" target="_blank"><i class="fa fa-github"></i></a></li> -->
             </ul>
@@ -73,12 +71,33 @@
                 <p> </p>
 
 
-                <p><b> References: </b></p>
+                <!-- <p><b> References: </b></p> -->
 
-                <p> Sidebar source code <a href="https://github.com/noerw/leaflet-sidebar-v2" title="leaflet-sidebar-v2" target="_blank"> github </a> </p>
+                <!-- <p> Sidebar source code <a href="https://github.com/noerw/leaflet-sidebar-v2" title="leaflet-sidebar-v2" target="_blank"> github </a> </p> -->
 
                 <!-- <p> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank"> www.flaticon.com</a></p> -->
            
+            </div>
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">Register New Companies <span class="sidebar-close">
+                    <i class="fa fa-caret-left"></i></span>
+                </h1>
+                <a href="https://arcg.is/1u8jPb" class="btn btn-primary" target="_blank">Show your Company as Geospatial Company</a>
+                
+            </div>
+
+            <div class="sidebar-pane" id="info">
+                <h1 class="sidebar-header"> How to use this map <span class="sidebar-close">
+                    <i class="fa fa-caret-left"></i></span>
+                </h1>
+                <p> </p>
+            </div>
+
+            <div class="sidebar-pane" id="filter">
+                <h1 class="sidebar-header"> Filters <span class="sidebar-close">
+                    <i class="fa fa-caret-left"></i></span>
+                </h1>
+                <p> </p>
             </div>
 
             <div class="sidebar-pane" id="profile">
@@ -87,14 +106,6 @@
                 </h1>
                 <p> Map by Pratichhya Sharma and Vitória Barbosa Ferreira, Msc students in the <a href="https://www.master-cde.eu/" title = "master-cde" target="_blank" > Copernicus Master in Digital Earth </a>. </p>
             </div>
-            <div class="sidebar-pane" id="profile">
-                <h1 class="sidebar-header">Register New Companies <span class="sidebar-close">
-                    <i class="fa fa-caret-left"></i></span>
-                </h1>
-                <a href="https://arcg.is/1u8jPb" class="btn btn-primary">Show your Company as Geospatial Company</a>
-                
-            </div>
-
         </div>
     </div>
 
