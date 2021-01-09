@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geospatial Companies</title>
-
-
-    
+    <title>Geospatial Companies</title> 
     
     <!--link to stylesheet-->
     <link rel="stylesheet" href="css/style.css">
@@ -43,13 +40,15 @@
     <div id="sidebar" class="sidebar collapsed">
         <!-- Nav tabs -->
         <div class="sidebar-tabs">
+
             <ul role="tablist">
                 <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
                 <li><a href = "#info" role = "tab"> <i class="fa fa-info"></i></a></li>
                 <li><a href = "#filter" role = "tab"> <i class="fa fa-filter"></i></a></li>
                 <li><a href="#profile" role="tab"><i class="fa fa-user"></i></a></li>
-                <!-- <li><a href="https://vibferreira.github.io/carto-leaflet/" role="tab" target="_blank"><i class="fa fa-github"></i></a></li> -->
+        
             </ul>
+
         </div>
 
         <!-- Tab panes -->
@@ -60,29 +59,21 @@
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
 
-                <p> </p>
+                <p> Where are the companies focused on the Geospatial domain is the main question that drove the elaboration of this map. 
+                    If you are intersted in finding a new job or just to get to know some geospatial companies around the world, 
+                    this map might be useful for you! </p>
                 
-                <p> </p>
+                <p> You are also welcome to colaborate with this map by adding companies you might know around the world:</p>
                 
-                <p> </p>
-
-                <p> </p>
-                
-                <p> </p>
-
-
-                <!-- <p><b> References: </b></p> -->
-
-                <!-- <p> Sidebar source code <a href="https://github.com/noerw/leaflet-sidebar-v2" title="leaflet-sidebar-v2" target="_blank"> github </a> </p> -->
-
-                <!-- <p> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank"> www.flaticon.com</a></p> -->
+                <br>
            
             </div>
             <div class="sidebar-pane" id="home">
                 <h1 class="sidebar-header">Register New Companies <span class="sidebar-close">
                     <i class="fa fa-caret-left"></i></span>
                 </h1>
-                <a href="https://arcg.is/1u8jPb" class="btn btn-primary" target="_blank">Show your Company as Geospatial Company</a>
+                <br>
+                <a href="https://arcg.is/1u8jPb" class="btn btn-primary" target="_blank"> Click here to add a Geospatial Company </a>
                 
             </div>
 
@@ -94,14 +85,59 @@
             </div>
 
             <div class="sidebar-pane" id="filter">
-                <h1 class="sidebar-header"> Filters <span class="sidebar-close">
+                <h1 class="sidebar-header"> Queries <span class="sidebar-close">
                     <i class="fa fa-caret-left"></i></span>
                 </h1>
-                <p> </p>
+                <p>
+                    Query the companies by domain and size!
+
+                </p>
+
+                <div>
+                    <label>
+                        Domain:
+                        <select id="domain">
+                          <!-- make sure to encase string values in single quotes for valid sql -->
+                          <option value="1=1">Any</option>
+                          <option value="USER_Categ='Academia/Research'" selected = "selected">Academia/Research</option>
+                          <option value="USER_Categ='Digital Farming'" selected = "selected">Digital Farming</option>
+                          <option value="USER_Categ='Earth Observation'" selected = "selected">Earth Observation</option>
+                          <option value="USER_Categ='GIS / Spatial Analysis'" selected = "selected">GIS / Spatial Analysis</option>
+                          <option value="USER_Categ='Other'" selected = "selected">Other</option>
+                          <option value="USER_Categ='Webmap / Cartography'" selected = "selected">Webmap / Cartography</option>
+                          <option value="USER_Categ='UAV / Aerial'" selected = "selected">UAV / Aerial</option>
+                          <option value="USER_Categ='Webmap / Cartography'" selected = "selected">Webmap / Cartography</option>
+                        </select>
+                      </label>
+
+                </div>
+
+                <br>
+
+                <div>
+                    <label>
+                        Size:
+                        <select id="size">
+                          <!-- make sure to encase string values in single quotes for valid sql -->
+                          <option value="1=1">Any</option>
+                          <option value="USER_Offic='S'">Small</option>
+                          <option value="USER_Offic='M'">Medium</option>
+                          <option value="USER_Offic='L'">Large</option>
+                        </select>
+                      </label>
+
+                      <div class="note">
+                         <p> Note that "small" stands for companies with
+                          10 to 49 employees, "medium" from 50 to 249 employees 
+                          and "large" for companies with over 250 employees 
+                          <a href="https://data.oecd.org/entrepreneur/enterprises-by-business-size.htm#:~:text=SMEs%20are%20further%20subdivided%20into,employ%20250%20or%20more%20people." target="_blank"> (OECD)</a>
+                        .</p>
+                     </div>
+                </div>
             </div>
 
             <div class="sidebar-pane" id="profile">
-                <h1 class="sidebar-header">Profile <span class="sidebar-close">
+                <h1 class="sidebar-header"> Cartographers <span class="sidebar-close">
                     <i class="fa fa-caret-left"></i></span>
                 </h1>
                 <p> Map by Pratichhya Sharma and Vitória Barbosa Ferreira, Msc students in the <a href="https://www.master-cde.eu/" title = "master-cde" target="_blank" > Copernicus Master in Digital Earth </a>. </p>
@@ -137,7 +173,8 @@
 href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"
 integrity="sha512-BBToHPBStgMiw0lD4AtkRIZmdndhB6aQbXpX7omcrXeG2PauGBl2lzq2xUZTxaLxYz5IDHlmneCZ1IJ+P3kYtQ=="
 crossorigin="">
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
+<link rel="stylesheet" type="text/css" 
+href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
 integrity="sha512-RLEjtaFGdC4iQMJDbMzim/dOvAu+8Qp9sw7QE4wIMYcg2goVoivzwgSZq9CsIxp4xKAZPKh5J2f2lOko2Ze6FQ=="
 crossorigin="">
 <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"
@@ -150,7 +187,5 @@ crossorigin=""></script>
 <script src="js/leaflet-sidebar.js"></script>
  <script src="js/main.js"></script>
 
-    
-    
 </body>
 </html>

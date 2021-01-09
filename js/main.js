@@ -53,6 +53,7 @@ var icon_simp = L.icon({
     iconAnchor: [13.5, 17.5],
     popupAnchor: [0, -11]
   });
+
 //styling enlarged icon
 var icon_enlarge = L.icon({
     iconUrl: 'https://pratichhya01.github.io/geopatialcompany/data/images/location.png',
@@ -60,6 +61,7 @@ var icon_enlarge = L.icon({
     iconAnchor: [13.5, 17.5],
     popupAnchor: [0, -11]
   });
+
 //function for when mouse pointer is above feature
 function highlightFeature(e) {
     var layer = e.target;
@@ -92,6 +94,22 @@ var geoLayer=L.esri.Cluster.featureLayer({
 	});
 
 geoLayer.addTo(map);
+
+// Querying the data per domain
+var domain = document.getElementById('domain');
+
+domain.addEventListener('change', function () {
+  geoLayer.setWhere(domain.value);
+});
+
+// Querying the data per domain
+var size = document.getElementById('size');
+
+size.addEventListener('change', function () {
+  geoLayer.setWhere(size.value);
+});
+
+
 
 // create the geocoding control and add it to the map
 var searchControl = L.esri.Geocoding.geosearch().addTo(map);
