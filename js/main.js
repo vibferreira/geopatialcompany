@@ -3,10 +3,14 @@ var lat = 25.694330;
 var lng = -15.459268;
 var zoom = 2.4;
 var map = L.map('map', {
-  zoomControl: false
+  zoomControl: false,
+  maxZoom: 11,
+  minZoom:2
 });
 
 map.setView([lat, lng], zoom);
+
+
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 18
 }).addTo(map);
@@ -84,6 +88,7 @@ L.Control.zoomHome = L.Control.extend({
 // add the new control to the map
 var zoomHome = new L.Control.zoomHome();
 zoomHome.addTo(map);
+L.map
 // adding the tile layers (basemaps) to the map 
 
 var Dark_Streets = L.tileLayer('https://{s}.tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
