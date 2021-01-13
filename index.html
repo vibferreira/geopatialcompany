@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geospatial Companies</title> 
+    <title> Geospatial Companies </title> 
     
     <!--link to stylesheet-->
     <link rel="stylesheet" href="css/style.css">
@@ -34,8 +34,10 @@
     <link rel="stylesheet"href="https://unpkg.com/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css"/>
     <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
 
+
 </head>
-<body>
+
+<body onload="init()">
     <!-- sidebar content -->
     <div id="sidebar" class="sidebar collapsed">
         <!-- Nav tabs -->
@@ -46,7 +48,6 @@
                 <li><a href = "#info" role = "tab"> <i class="fa fa-info"></i></a></li>
                 <li><a href = "#filter" role = "tab"> <i class="fa fa-filter"></i></a></li>
                 <li><a href="#profile" role="tab"><i class="fa fa-user"></i></a></li>
-        
             </ul>
 
         </div>
@@ -97,7 +98,6 @@
                     <label>
                         Domain:
                         <select id="domain">
-                          <!-- make sure to encase string values in single quotes for valid sql -->
                           <option value="1=1">Any</option>
                           <option value="USER_Categ='Academia/Research'" selected = "selected">Academia/Research</option>
                           <option value="USER_Categ='Digital Farming'" selected = "selected">Digital Farming</option>
@@ -118,7 +118,6 @@
                     <label>
                         Size:
                         <select id="size">
-                          <!-- make sure to encase string values in single quotes for valid sql -->
                           <option value="1=1">Any</option>
                           <option value="USER_Offic='S'">Small</option>
                           <option value="USER_Offic='M'">Medium</option>
@@ -183,6 +182,9 @@ crossorigin=""></script>
 <script src="https://unpkg.com/esri-leaflet-cluster@2.1.0/dist/esri-leaflet-cluster.js"
 integrity="sha512-fEdNFHisleVtEYdLhW4Z2RsR7TN6hLutE/+O4D+skfTNY2rlHm8HOZARPWkdrFFy/+i2KjFxcZAKTUWaVfbV0g=="
 crossorigin=""></script>
+
+<!-- link to select country plugin control -->
+<script src="Leaflet.CountrySelect.js"></script>
  
 <script src="js/leaflet-sidebar.js"></script>
  <script src="js/main.js"></script>

@@ -24,6 +24,25 @@ var streets =  L.tileLayer('https://{s}.tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.p
 	accessToken: '2aGuIHpH6H1xqQq2ly21G8ecFhmzxpf7NydCHPRwyEKgvQCmhkrUDAtTBCo4jkxw'
 }).addTo(map);
 
+// querying by country using the country select plugin
+function init(){		
+  var select = L.countrySelect().addTo(map);
+  
+  select.on('change', function(e){
+    if (e.feature === undefined){ //Do nothing on title
+      return;
+    }
+    var country = L.geoJson(e.feature);
+    if (this.previousCountry != null){
+      map.removeLayer(this.previousCountry);
+    }
+    this.previousCountry = country;
+
+    map.addLayer(country);
+    map.fitBounds(country.getBounds());
+    
+  });
+}
 
 // this variable will be used in the layer control (at the end)
 var baseMaps = {
@@ -35,7 +54,7 @@ var baseMaps = {
 L.control.scale({position:'bottomright', imperial:false}).addTo(map);
 
 // adding north arrow
-var north = L.control({position: "topright"});
+var north = L.control({position: "bottomright"});
 north.onAdd = function() {
     var div = L.DomUtil.create("div", "info legend");
     div.innerHTML = '<img src= "data/north-arrow.png" alt="Image" height = "30" width="30">';
@@ -109,8 +128,6 @@ size.addEventListener('change', function () {
   geoLayer.setWhere(size.value);
 });
 
-
-
 // create the geocoding control and add it to the map
 var searchControl = L.esri.Geocoding.geosearch().addTo(map);
 
@@ -125,7 +142,6 @@ searchControl.on("results", function (data) {
   }
 });
 
-
 //adding Layer control
 L.control.layers(baseMaps).addTo(map); 
 
@@ -133,3 +149,6 @@ L.control.layers(baseMaps).addTo(map);
 map.on('dblclick', function(e) {
 	alert(e.latlng);
 });
+
+
+// L.control.layers(baseMaps, features, {position:'topright', collapsed: false}).addTo(map);
