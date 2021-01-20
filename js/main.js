@@ -85,6 +85,7 @@ L.Control.zoomHome = L.Control.extend({
       }
   }
 });
+
 // add the new control to the map
 var zoomHome = new L.Control.zoomHome();
 zoomHome.addTo(map);
@@ -139,7 +140,7 @@ L.control.scale({position:'bottomright', imperial:false}).addTo(map);
 var north = L.control({position: "bottomright"});
 north.onAdd = function() {
     var div = L.DomUtil.create("div", "info legend");
-    div.innerHTML = '<img src= "data/north-arrow.png" alt="Image" height = "30" width="30">';
+    div.innerHTML = '<img src= "https://pratichhya01.github.io/geopatialcompany/data/north-arrow.png" alt="Image" height = "30" width="30">';
     return div;
 }
 north.addTo(map);
@@ -225,7 +226,7 @@ searchControl.on("results", function (data) {
 });
 
 //adding Layer control
-L.control.layers(baseMaps).addTo(map); 
+L.control.layers(null, baseMaps, {position: 'topleft'}).addTo(map); 
 
 //when double clicked on the map, an alert with the latitude and longitude coordinates for that location
 map.on('dblclick', function(e) {
