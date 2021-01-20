@@ -110,7 +110,6 @@ var streets =  L.tileLayer('https://{s}.tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.p
 // querying by country using the country select plugin
 function init(){		
   var select = L.countrySelect().addTo(map);
-  
   select.on('change', function(e){
     if (e.feature === undefined){ //Do nothing on title
       return;
@@ -204,7 +203,7 @@ domain.addEventListener('change', function () {
   geoLayer.setWhere(domain.value);
 });
 
-// Querying the data per domain
+// Querying the data per size
 var size = document.getElementById('size');
 
 size.addEventListener('change', function () {
