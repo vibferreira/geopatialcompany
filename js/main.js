@@ -108,17 +108,27 @@ var streets =  L.tileLayer('https://{s}.tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.p
 	accessToken: '2aGuIHpH6H1xqQq2ly21G8ecFhmzxpf7NydCHPRwyEKgvQCmhkrUDAtTBCo4jkxw'
 }).addTo(map);
 
+// this variable will be used in the layer control (at the end)
+var baseMaps = {
+	"Streets Dark": Dark_Streets,
+	"Streets Light": streets
+}
+
 // querying by country using the country select plugin
 function init(){		
-  var select = L.countrySelect().addTo(map);
+  var select = L.countrySelect({title: 'Select a country'}).addTo(map); //title
+
   select.on('change', function(e){
     if (e.feature === undefined){ //Do nothing on title
       return;
     }
+
     var country = L.geoJson(e.feature);
     if (this.previousCountry != null){
       map.removeLayer(this.previousCountry);
     }
+   
+
     this.previousCountry = country;
 
     map.addLayer(country);
@@ -127,11 +137,6 @@ function init(){
   });
 }
 
-// this variable will be used in the layer control (at the end)
-var baseMaps = {
-	"Streets Dark": Dark_Streets,
-	"Streets Light": streets
-}
 
 // adding scale bar
 L.control.scale({position:'bottomright', imperial:false}).addTo(map);
@@ -225,13 +230,9 @@ searchControl.on("results", function (data) {
   }
 });
 
-//adding Layer control
-L.control.layers(null, baseMaps, {position: 'topleft'}).addTo(map); 
-
 //when double clicked on the map, an alert with the latitude and longitude coordinates for that location
 map.on('dblclick', function(e) {
 	alert(e.latlng);
 });
 
 
-// L.control.layers(baseMaps, features, {position:'topright', collapsed: false}).addTo(map);
